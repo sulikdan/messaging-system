@@ -1,0 +1,9 @@
+@startmindmap
+
+* ShopBackend
+** JMS - balancer (RabbitMQ, ActiveMQ)
+*** PaymentGateway
+** Kafka
+*** Processing Point
+
+@endmindmap
