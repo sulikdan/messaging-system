@@ -1,4 +1,8 @@
 package eu.sulikdan.shoppingbackend.entity.product;
 
-public class Laptop {
+import eu.sulikdan.shoppingbackend.entity.Product;
+import jakarta.persistence.Entity;
+
+@Entity
+public class Laptop extends Product {
 }
