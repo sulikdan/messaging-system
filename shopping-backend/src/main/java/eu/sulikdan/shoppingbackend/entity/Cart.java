@@ -19,6 +19,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Getter
@@ -33,17 +34,14 @@ public class Cart {
     @org.hibernate.validator.constraints.UUID
     UUID id;
 
-    @OneToMany
+    @OneToMany(mappedBy = "customer")
     Customer customer;
-
-    @OneToOne
-    Order order;
 
     @ManyToMany
     @JoinTable(name = "cart_product",
             joinColumns = {@JoinColumn(name = "fk_cart")},
             inverseJoinColumns = {@JoinColumn(name = "fk_product")})
-    List<Product> products;
+    Set<Product> products;
 
     @CreatedDate
     LocalDateTime createdAt;

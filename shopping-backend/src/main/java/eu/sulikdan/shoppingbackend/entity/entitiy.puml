@@ -1,0 +1,46 @@
+@startuml
+
+class Cart
+class Customer
+class Order
+enum OrderState {
+    CREATED
+    PROCESSING
+    PROCESSED
+    DELIVERING
+    DELIVERED
+}
+class Product
+class ProductModel
+
+
+
+Cart "N" ---> "M" Product
+Cart "M" <-- "1" Customer
+
+
+
+Order "M" --- "N" Product
+Order "M" -- "1" OrderState
+Order "M" <-- "1" Customer
+
+Product "1" --- "1" ProductModel
+'Product "N" <---- "M" Customer
+
+
+
+
+class Bike
+class Book
+class Laptop
+
+
+Bike --|> ProductModel
+Book --|> ProductModel
+Laptop --|> ProductModel
+'Bike --|> Product
+'Book --|> Product
+'Laptop --|> Product
+
+
+@enduml

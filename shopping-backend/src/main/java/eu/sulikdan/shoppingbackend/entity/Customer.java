@@ -3,6 +3,7 @@ package eu.sulikdan.shoppingbackend.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AccessLevel;
@@ -39,11 +40,10 @@ public class Customer {
     @Email
     String email;
 
-    @ManyToOne
+    @OneToMany(mappedBy = "order")
     Order order;
 
-    @ManyToOne
-    @JoinColumn(name = "fk_cart")
+    @OneToMany(mappedBy = "cart")
     Cart cart;
 
     @CreatedDate
