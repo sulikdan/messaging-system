@@ -1,8 +1,7 @@
 package eu.sulikdan.shoppingbackend.entity;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -12,12 +11,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
-import org.springframework.boot.actuate.endpoint.Access;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Setter
@@ -40,11 +38,11 @@ public class Customer {
     @Email
     String email;
 
-    @OneToMany(mappedBy = "order")
-    Order order;
+    @OneToMany(mappedBy = "customer")
+    List<ShopOrder> shopOrderList;
 
-    @OneToMany(mappedBy = "cart")
-    Cart cart;
+    @OneToMany(mappedBy = "customer")
+    List<Cart> cartList;
 
     @CreatedDate
     LocalDateTime createdAt;

@@ -1,12 +1,12 @@
 package eu.sulikdan.shoppingbackend.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,26 +20,28 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
-@AllArgsConstructor
-@NoArgsConstructor
+
 @Entity
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Order {
+@AllArgsConstructor
+@NoArgsConstructor
+public class ShopOrder {
 
     @Id
     @org.hibernate.validator.constraints.UUID
     UUID id;
 
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "shopOrder")
     List<Product> productList;
 
     @ManyToOne
     @JoinColumn(name = "fk_customer")
     Customer customer;
 
+    @Enumerated(EnumType.STRING)
     OrderState orderState;
 
 
@@ -47,6 +49,5 @@ public class Order {
     LocalDateTime createdAt;
     @LastModifiedDate
     LocalDateTime modifiedAt;
-
 
 }

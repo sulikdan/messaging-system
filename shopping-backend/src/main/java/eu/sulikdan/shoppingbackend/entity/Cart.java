@@ -1,9 +1,11 @@
 package eu.sulikdan.shoppingbackend.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.AccessLevel;
@@ -14,7 +16,6 @@ import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
@@ -34,14 +35,15 @@ public class Cart {
     @org.hibernate.validator.constraints.UUID
     UUID id;
 
-    @OneToMany(mappedBy = "customer")
+    @ManyToOne
+    @JoinColumn(name = "fk_customer")
     Customer customer;
 
     @ManyToMany
     @JoinTable(name = "cart_product",
             joinColumns = {@JoinColumn(name = "fk_cart")},
             inverseJoinColumns = {@JoinColumn(name = "fk_product")})
-    Set<Product> products;
+    Set<Product> cartProducts;
 
     @CreatedDate
     LocalDateTime createdAt;
