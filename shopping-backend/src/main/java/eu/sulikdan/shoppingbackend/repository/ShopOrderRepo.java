@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.UUID;
 
-public interface OrderRepo extends CrudRepository<ShopOrder, UUID> {
+public interface ShopOrderRepo extends CrudRepository<ShopOrder, UUID> {
 }

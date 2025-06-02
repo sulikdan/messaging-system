@@ -1,6 +1,6 @@
 package eu.sulikdan.shoppingbackend.service;
 
-import eu.sulikdan.shoppingbackend.repository.ProductRepo;
+import eu.sulikdan.shoppingbackend.repository.ShopOrderRepo;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -11,7 +11,8 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class ProductService {
+public class ShopOrderService {
 
-    ProductRepo productRepo;
+    ShopOrderRepo shopOrderRepo;
+
 }
