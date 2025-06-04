@@ -1,0 +1,42 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+:Consumer:
+
+Consumer --> (Shopping Frontend)
+
+(Generator of Actions) --> (Shopping Backend)
+
+note top of (Generator of Actions) : tmp solution to simulate FE
+
+(Shopping Frontend) -> (Shopping Backend)
+
+(Shopping Backend) --> (Kafka)
+(Shopping Backend) --> (JMS)
+(Shopping Backend) <--> (Postgres DB 1)
+
+(Kafka) --> (Shopping Archive)
+
+(JMS) --> (Payment Gate)
+(JMS) --> (Shopping Backend)
+
+(Payment Gate) --> (JMS)
+
+(Shopping Archive) ---> (Postgres DB 2)
+
+
+note top of (Shopping Backend)
+Will use this via API to generated date and play with them...
+end note
+
+note bottom of (Shopping Frontend)
+ May be implemented in future
+end note
+
+note bottom of (Shopping Archive) : Simple app to archive whatever happened in the app
+
+note "Just POC, no real impl." as N_external
+N_external .. (Payment Gate)
+N_external .. (Shopping Archive)
+
+@enduml
