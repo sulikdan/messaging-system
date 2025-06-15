@@ -4,6 +4,7 @@ import eu.sulikdan.shoppingbackend.entity.Customer;
 import eu.sulikdan.shoppingbackend.repository.CustomerRepo;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +20,7 @@ public class CustomerLoader {
 
     CustomerRepo customerRepo;
 
+    @Getter
     List<Customer> customers = new ArrayList<>();
 
 
@@ -61,11 +63,6 @@ public class CustomerLoader {
 
         customerRepo.saveAll(this.customers);
 
-    }
-
-
-    List<Customer> getCustomers() {
-        return this.customers;
     }
 
 

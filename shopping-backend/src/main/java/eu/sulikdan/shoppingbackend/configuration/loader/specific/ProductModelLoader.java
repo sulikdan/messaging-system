@@ -7,6 +7,7 @@ import eu.sulikdan.shoppingbackend.entity.product.Laptop;
 import eu.sulikdan.shoppingbackend.repository.ProductModelRepo;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Component;
 
@@ -23,6 +24,7 @@ public class ProductModelLoader {
 
     ProductModelRepo productModelRepo;
 
+    @Getter
     List<ProductModel> productModels = new ArrayList<>();
 
 
@@ -39,11 +41,6 @@ public class ProductModelLoader {
         );
 
         productModelRepo.saveAll(this.productModels);
-    }
-
-
-    public List<ProductModel> getProductModels() {
-        return this.productModels;
     }
 
 

@@ -1,5 +1,6 @@
 package eu.sulikdan.shoppingbackend.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -13,6 +14,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
 
@@ -38,7 +40,19 @@ public class Product {
     @JoinColumn(name = "fk_order")
     ShopOrder shopOrder;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     ProductModel productModel;
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return Objects.equals(id, product.id) && Objects.equals(price, product.price) && Objects.equals(cart, product.cart) && Objects.equals(shopOrder, product.shopOrder) && Objects.equals(productModel, product.productModel);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, price, cart, shopOrder, productModel);
+    }
 }

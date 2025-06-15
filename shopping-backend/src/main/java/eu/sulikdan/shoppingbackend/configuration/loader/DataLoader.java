@@ -1,6 +1,7 @@
 package eu.sulikdan.shoppingbackend.configuration.loader;
 
 import eu.sulikdan.shoppingbackend.configuration.loader.specific.CustomerLoader;
+import eu.sulikdan.shoppingbackend.configuration.loader.specific.ProductLoader;
 import eu.sulikdan.shoppingbackend.configuration.loader.specific.ProductModelLoader;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -15,7 +16,8 @@ import org.springframework.stereotype.Component;
 public class DataLoader implements ApplicationRunner {
 
     CustomerLoader customerLoader;
-    private final ProductModelLoader productModelLoader;
+    ProductModelLoader productModelLoader;
+    ProductLoader productLoader;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -24,7 +26,7 @@ public class DataLoader implements ApplicationRunner {
 
         productModelLoader.loadProductModels();
 
-
+        productLoader.loadProducts();
 
     }
 }
