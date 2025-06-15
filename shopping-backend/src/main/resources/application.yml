@@ -1,0 +1,25 @@
+
+spring:
+  application:
+    name: shopping-backend
+  datasource:
+    url: jdbc:postgresql://localhost:5432/default_database
+    username: username
+    password: password
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#    properties:
+#      hibernate:
+#        connection:
+#          charSet: UTF-8
+#        hbm2ddl:
+#          import_files_sql_extractor: org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor
+#    defer-datasource-initialization: true
+
+#sql:
+#  init:
+#    mode: always #for
+
