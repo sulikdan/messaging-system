@@ -27,6 +27,8 @@ public class Product {
     @Id
     UUID id;
 
+    Double price;
+
     // TODO some reduction to selected entities or it will blow up ... :D
     @ManyToMany(mappedBy = "cartProducts")
     Set<Cart> cart;

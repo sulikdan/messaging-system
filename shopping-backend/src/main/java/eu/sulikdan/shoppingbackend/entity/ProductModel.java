@@ -33,7 +33,6 @@ public abstract class ProductModel {
 
     String name;
 
-    Double price;
 
     @OneToOne
     Product product;
