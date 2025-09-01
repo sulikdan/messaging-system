@@ -1,0 +1,33 @@
+<div class="flex justify-between bg-amber-300">
+  <div class="justify-items-start">
+    <a mat-button>Home</a>
+    <a mat-button>Products</a>
+  </div>
+
+  <div class="justify-self-center content-center font-bold">Shopping Front-End</div>
+
+
+  <div class="justify-items-end">
+<!--  TODO icon cart + tooltip  -->
+    <button matIconButton>
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+<!--  TODO icon theme + tooltip -->
+    <button matIconButton>
+
+      <mat-icon (click)="changeTheme()">
+        @if (isDarkMode){
+          dark_mode
+        } @else {
+          light_mode
+        }
+      </mat-icon>
+
+    </button>
+<!--  TODO icon user + tooltip -->
+    <button matIconButton>
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </div>
+
+</div>
