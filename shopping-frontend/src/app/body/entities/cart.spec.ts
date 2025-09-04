@@ -1,7 +1,7 @@
-import { Cart } from './cart';
+import { CartModel } from './cart.model';
 
-describe('Cart', () => {
+describe('CartModel', () => {
   it('should create an instance', () => {
-    expect(new Cart()).toBeTruthy();
+    expect(new CartModel()).toBeTruthy();
   });
 });

@@ -9,10 +9,10 @@ import {MatIconModule} from '@angular/material/icon';
     MatIconModule,
     MatIconButton
   ],
-  templateUrl: './header.html',
-  styleUrl: './header.css'
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.css'
 })
-export class Header {
+export class HeaderComponent {
 
   isDarkMode = false;
 

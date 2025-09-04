@@ -1,7 +1,7 @@
-import { ShopOrder } from './shop-order';
+import { ShopOrderModel } from './shop-order.model';
 
-describe('ShopOrder', () => {
+describe('ShopOrderModel', () => {
   it('should create an instance', () => {
-    expect(new ShopOrder()).toBeTruthy();
+    expect(new ShopOrderModel()).toBeTruthy();
   });
 });
