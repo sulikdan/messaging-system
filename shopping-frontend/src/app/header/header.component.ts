@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import {MatButton, MatIconButton, MatMiniFabButton} from '@angular/material/button';
+import {Component, inject} from '@angular/core';
+import {MatButton, MatIconButton} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {SideNavService} from '../others/services/side-nav.service';
 
 @Component({
   selector: 'app-header',
@@ -15,8 +16,13 @@ import {MatIconModule} from '@angular/material/icon';
 export class HeaderComponent {
 
   isDarkMode = false;
+  sideNavService: SideNavService = inject(SideNavService);
 
   changeTheme() {
     this.isDarkMode = !this.isDarkMode;
+  }
+
+  openMenu() {
+    this.sideNavService.openSideNav();
   }
 }

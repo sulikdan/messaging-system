@@ -2,7 +2,7 @@
   <div class="justify-items-start">
     <a mat-button>Home</a>
     <a mat-button>Products</a>
-    <a mat-button>Creation</a>
+    <a mat-button (click)="openMenu()" >Creation</a>
   </div>
 
   <div class="justify-self-center content-center font-bold">Shopping Front-End</div>
@@ -15,7 +15,6 @@
     </button>
 <!--  TODO icon theme + tooltip -->
     <button matIconButton>
-
       <mat-icon (click)="changeTheme()">
         @if (isDarkMode){
           dark_mode
@@ -23,7 +22,6 @@
           light_mode
         }
       </mat-icon>
-
     </button>
 <!--  TODO icon user + tooltip -->
     <button matIconButton>
