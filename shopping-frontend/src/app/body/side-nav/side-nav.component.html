@@ -2,9 +2,10 @@
   <mat-sidenav-container class="example-container" autosize>
     <mat-sidenav [opened]="this.isShownSignal()" class="example-sidenav" mode="side">
       <mat-nav-list>
-        <mat-list-item>Customer</mat-list-item>
-        <mat-list-item>Product</mat-list-item>
-        <mat-list-item>Product model</mat-list-item>
+<!-- TODO should be likely nested in creation not here for everyone of them ... each one should hav eits own dedicated ... -->
+        <mat-list-item routerLinkActive routerLink="creation/customer">Customer</mat-list-item>
+        <mat-list-item routerLinkActive routerLink="creation/product">Product</mat-list-item>
+        <mat-list-item routerLinkActive routerLink="creation/product-model">Product model</mat-list-item>
       </mat-nav-list>
     </mat-sidenav>
 

@@ -1,8 +1,8 @@
 <div class="flex justify-between bg-amber-300">
   <div class="justify-items-start">
-    <a mat-button>Home</a>
-    <a mat-button>Products</a>
-    <a mat-button (click)="openMenu()" >Creation</a>
+    <button mat-button routerLinkActive="activebutton" routerLink="home" >Home</button>
+    <button mat-button routerLinkActive="activebutton" routerLink="products" >Products</button>
+    <button mat-button routerLinkActive="activebutton" routerLink="creation" (click)="openMenu()" >Creation</button>
   </div>
 
   <div class="justify-self-center content-center font-bold">Shopping Front-End</div>

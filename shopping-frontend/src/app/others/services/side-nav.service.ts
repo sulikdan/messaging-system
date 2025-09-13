@@ -16,6 +16,10 @@ export class SideNavService {
     this.isSideNavOpen.set(false);
   }
 
+  changeSideNavState() {
+    this.isSideNavOpen.update(value => !value);
+  }
+
   public getIsSideNavOpen(){
     return this.isSideNavOpen;
   }
