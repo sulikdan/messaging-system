@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import {SideNavComponent} from './side-nav/side-nav.component';
+import {SideNavCreationComponent} from './creation/side-nav-creation/side-nav-creation.component';
 import {RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-body',
   imports: [
-    SideNavComponent,
     RouterOutlet
   ],
   templateUrl: './body.component.html',

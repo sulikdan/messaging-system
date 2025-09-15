@@ -1,1 +1,36 @@
-<p>customer works!</p>
+<mat-card appearance="filled" class="flex">
+
+  <mat-card-header class="justify-center">
+    <mat-card-title>Create a Customer</mat-card-title>
+    <mat-card-subtitle>Please fill below required data ..</mat-card-subtitle>
+  </mat-card-header>
+
+<!-- TODO play around with it to align to center... -->
+  <mat-card-content class="text-center">
+    <div class="max-width flex flex-col self-center">
+      <mat-form-field>
+        <mat-label>First name</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Last name</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+    </div>
+
+
+  </mat-card-content>
+
+  <mat-card-actions class="justify-around">
+    <button matButton (click)="createCustomer()">Create</button>
+    <button matButton (click)="resetTemplate()">Reset</button>
+  </mat-card-actions>
+
+</mat-card>

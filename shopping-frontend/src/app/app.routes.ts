@@ -18,7 +18,7 @@ export const routes: Routes = [
           [
             {path: 'customer', component: CustomerComponent},
             {path: 'product', component: ProductComponent},
-            {path: 'product-mode', component: ProductModelComponent},
+            {path: 'product-model', component: ProductModelComponent},
             {path: '', redirectTo: 'customer', pathMatch: 'full'}
           ]
       },

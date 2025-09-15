@@ -1,15 +1,15 @@
 import {Component, OnDestroy, OnInit, signal, Signal, ViewChild} from '@angular/core';
 import {MatDrawer, MatSidenav, MatSidenavContainer} from '@angular/material/sidenav';
-import {SideNavService} from '../../others/services/side-nav.service';
+import {SideNavService} from '../../../others/services/side-nav.service';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListItem, MatNavList} from '@angular/material/list';
 import {MatIconButton} from '@angular/material/button';
-import {AppMaterialModule} from '../../app-material.module';
+import {AppMaterialModule} from '../../../app-material.module';
 import {NavigationEnd, Router, RouterLink, RouterLinkActive} from '@angular/router';
 import {filter, Subscription} from 'rxjs';
 
 @Component({
-  selector: 'app-side-nav',
+  selector: 'app-side-nav-creation',
   imports: [
     MatIconModule,
     MatSidenavContainer,
@@ -20,10 +20,10 @@ import {filter, Subscription} from 'rxjs';
     RouterLink,
     RouterLinkActive
   ],
-  templateUrl: './side-nav.component.html',
-  styleUrl: './side-nav.component.css',
+  templateUrl: './side-nav-creation.component.html',
+  styleUrl: './side-nav-creation.component.css',
 })
-export class SideNavComponent implements OnInit, OnDestroy {
+export class SideNavCreationComponent implements OnInit, OnDestroy {
 
 
   sideNavService: SideNavService;

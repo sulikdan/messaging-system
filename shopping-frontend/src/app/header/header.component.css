@@ -7,6 +7,6 @@
 .activebutton
 {
   /*TODO use system colors accent or somethign*/
-  background-color: rgb(51, 51, 51);
+  background-color: rgba(255, 255, 255, 0.64);
   color: white;
 }
